@@ -3,7 +3,7 @@
     "description": "my simple test logger",
     "autoload": {
         "psr-4": {
-            "apptestic\\logger\\" : "Logger/"
+            "MyLogger\\" : "Logger/"
         }
     },
     "authors": [
