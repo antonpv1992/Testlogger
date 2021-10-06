@@ -7,13 +7,16 @@ class MyLogger
 
     private $name;
     private $file;
+    private $dir;
     private $fp;
 
     public function __construct($file, $name = 'Log')
     {
+        $dirs = explode('/', $file);
         $this->name = $name;
-        $this->file = $file;
-        $this->fp = fopen($file, 'a+');
+        $this->file = array_pop($dirs);
+        $this->dir = $this->createDir($dirs); 
+        $this->fp = fopen($this->dir . $this->file, 'a+');
     }
 
     protected function writeLog($string)
@@ -43,5 +46,17 @@ class MyLogger
             echo $log;
             $this->writeLog($log);
         }
+    }
+
+    private function createDir($array)
+    {
+        $main = "";
+        foreach($array as $dir){
+            if(!is_dir($main . $dir)){
+                mkdir($main . $dir);
+            }
+            $main .= $dir . '/';
+        }
+        return $main;
     }
 }
