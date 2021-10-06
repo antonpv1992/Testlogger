@@ -13,9 +13,7 @@ class MyLogger
     {
         $this->name = $name;
         $this->file = $file;
-        //if(is_file($file) || $file == null) {
-            $this->fp = fopen($file, 'a+');
-        //} 
+        $this->fp = fopen($file, 'a+');
     }
 
     protected function writeLog($string)
