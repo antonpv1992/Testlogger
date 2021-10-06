@@ -6,6 +6,11 @@
             "MyLogger\\" : "Logger/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "MyLogger\\" : "Logger/"
+        }
+    },
     "authors": [
         {
             "name": "Apptestic",
