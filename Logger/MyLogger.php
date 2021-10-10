@@ -32,7 +32,7 @@ class MyLogger
 
     public function warning($message)
     {
-        if(is_string($message)) {
+        if (is_string($message)) {
             $log = '[' . date('D M d H:i:s Y', time()) . '] ' . $this->name . ' Warning: ' . $message . PHP_EOL;
             echo $log;
             $this->writeLog($log);
@@ -41,7 +41,7 @@ class MyLogger
 
     public function error($message)
     {
-        if(is_string($message)) {
+        if (is_string($message)) {
             $log = '[' . date('D M d H:i:s Y', time()) . '] ' . $this->name . ' Error: ' . $message . PHP_EOL;
             echo $log;
             $this->writeLog($log);
@@ -52,7 +52,7 @@ class MyLogger
     {
         $main = "";
         foreach($array as $dir){
-            if(!is_dir($main . $dir)){
+            if (!is_dir($main . $dir)){
                 mkdir($main . $dir);
             }
             $main .= $dir . '/';
