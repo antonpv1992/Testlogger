@@ -48,6 +48,15 @@ class MyLogger
         }
     }
 
+    public function exception($message)
+    {
+        if (is_string($message)) {
+            $log = '[' . date('D M d H:i:s Y', time()) . '] ' . $this->name . ' Exception: ' . $message . PHP_EOL;
+            echo $log;
+            $this->writeLog($log);
+        }
+    }
+
     private function createDir($array)
     {
         $main = "";
