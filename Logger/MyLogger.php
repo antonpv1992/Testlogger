@@ -34,7 +34,6 @@ class MyLogger
     {
         if (is_string($message)) {
             $log = '[' . date('D M d H:i:s Y', time()) . '] ' . $this->name . ' Warning: ' . $message . PHP_EOL;
-            echo $log;
             $this->writeLog($log);
         }
     }
@@ -43,7 +42,6 @@ class MyLogger
     {
         if (is_string($message)) {
             $log = '[' . date('D M d H:i:s Y', time()) . '] ' . $this->name . ' Error: ' . $message . PHP_EOL;
-            echo $log;
             $this->writeLog($log);
         }
     }
@@ -52,14 +50,13 @@ class MyLogger
     {
         if (is_string($message)) {
             $log = '[' . date('D M d H:i:s Y', time()) . '] ' . $this->name . ' Exception: ' . $message . PHP_EOL;
-            echo $log;
             $this->writeLog($log);
         }
     }
 
     private function createDir($array)
     {
-        $main = "";
+        $main = "./";
         foreach($array as $dir){
             if (!is_dir($main . $dir)){
                 mkdir($main . $dir);
